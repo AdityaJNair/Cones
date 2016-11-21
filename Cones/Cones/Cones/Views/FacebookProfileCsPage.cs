@@ -22,7 +22,7 @@ namespace FacebookLogin.Views
 
         public FacebookProfileCsPage()
         {
-
+            NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = new FacebookViewModel();
             BackgroundColor = Color.White;
 
@@ -42,7 +42,7 @@ namespace FacebookLogin.Views
             Content = webView;
         }
 
-        private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
+        private void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
         {
 
             var accessToken = ExtractAccessTokenFromUrl(e.Url);
@@ -51,12 +51,8 @@ namespace FacebookLogin.Views
             {
                 try
                 {
-                    SetPageFail();
-                    var vm = BindingContext as FacebookViewModel;
+                    SetPageFail(accessToken);
 
-                    await vm.SetFacebookUserProfileAsync(accessToken);
-
-                    SetPageContent(vm.FacebookProfile);
                 }
                 catch (Exception ex)
                 {
@@ -67,21 +63,27 @@ namespace FacebookLogin.Views
             }
         }
 
-        private void SetPageFail()
+        private async void SetPageFail(string accessToken)
         {
             Content = new StackLayout
             {
+                VerticalOptions = LayoutOptions.Center,
+                Spacing = 20,
+                Padding = 50,
                 Children =
                 {
-                    new Label
+                    new ActivityIndicator
                     {
-                        Text = "hello",
-                        TextColor = Color.Black,
-                        FontSize = 50,
+                        Color = Color.Red,
+                        IsRunning = true
                     }
                 }
             };
-         }
+
+            var vm = BindingContext as FacebookViewModel;
+            await vm.SetFacebookUserProfileAsync(accessToken);
+            SetPageContent(vm.FacebookProfile);
+        }
 
 
         private void SetPageContent(FacebookProfile facebookProfile)
@@ -106,39 +108,20 @@ namespace FacebookLogin.Views
                     },
                     new Label
                     {
-                        Text = facebookProfile.IsVerified.ToString(),
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = facebookProfile.Devices.FirstOrDefault().Os,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
                         Text = facebookProfile.Gender,
                         TextColor = Color.Black,
                         FontSize = 22,
                     },
-                    new Label
+                     new Label
                     {
                         Text = facebookProfile.AgeRange.Min.ToString(),
                         TextColor = Color.Black,
                         FontSize = 22,
                     },
-                    new Label
+                    new Image
                     {
-                        Text = facebookProfile.Picture.Data.Url,
-                        TextColor = Color.Black,
-                        FontSize = 22,
-                    },
-                    new Label
-                    {
-                        Text = facebookProfile.Cover.Source,
-                        TextColor = Color.Black,
-                        FontSize = 22,
+                        Aspect = Aspect.AspectFit,
+                        Source = ImageSource.FromUri(new Uri(facebookProfile.Picture.Data.Url))
                     },
                 }
             };

@@ -20,7 +20,6 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Xamarin.Forms.Xaml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.csproj.App.config
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.pdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll.mdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.Views.UserProfile.xaml.g.cs
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll.mdb

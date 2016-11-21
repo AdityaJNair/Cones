@@ -8,6 +8,7 @@ namespace FacebookLogin.Views
 
         public MainCsPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             BackgroundImage = "cones.png";
 
             var loginButton = new Button
