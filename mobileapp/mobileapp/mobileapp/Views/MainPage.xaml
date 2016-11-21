@@ -1,23 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mobileapp.Views.MainPage">
-  <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
+             x:Class="mobileapp.Views.MainPage"  BackgroundImage="cones.png">
+  <StackLayout Spacing="0" Padding="10" VerticalOptions="End">
     <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B"/>
-  </StackLayout>
-  <RelativeLayout>
-    <Image Source="Jupiter.png" Opacity="0.3"
-                RelativeLayout.WidthConstraint=
-                  "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                RelativeLayout.HeightConstraint=
-                  "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
-    <Grid RelativeLayout.WidthConstraint=
-              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint=
-              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-
-      <Label Text="Hello world from XAML" VerticalOptions="Center"
-         HorizontalOptions="Center" FontSize="30"/>
-    </Grid>
-  </RelativeLayout>
+    <Button Text="Quick Access" TextColor="White" BackgroundColor="Green"/>
+  </StackLayout>  
 </ContentPage>
