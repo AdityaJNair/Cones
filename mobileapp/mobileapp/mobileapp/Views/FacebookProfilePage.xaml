@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:mobileapp.ViewModels;assembly=mobileapp"
-             x:Class="mobileapp.Views.FacebookProfilePage">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModels="clr-namespace:mobileapp.ViewModels;assembly=mobileapp" x:Class="mobileapp.FacebookProfilePage" Title="Facebook Profile"
+             BackgroundColor="White">
+
   <ContentPage.BindingContext>
     <viewModels:FacebookViewModel/>
   </ContentPage.BindingContext>

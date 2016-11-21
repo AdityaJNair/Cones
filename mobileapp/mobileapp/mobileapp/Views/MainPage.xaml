@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mobileapp.Views.MainPage"  BackgroundImage="cones.png">
   <StackLayout Spacing="0" Padding="10" VerticalOptions="End">
-    <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B" Clicked="LoginWithFacebook_Clicked"/>
-    <Button Text="Quick Access" TextColor="White" BackgroundColor="Green" Clicked="QuckAccess_Clicked"/>
+    <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B" Clicked="LoginWithFacebook_Clicked"/>/>
+    <Button Text="Quick Access" TextColor="White" BackgroundColor="Green" Clicked="QuckAccess_Clicked"/>/>
   </StackLayout>  
 </ContentPage>

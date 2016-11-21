@@ -28,12 +28,6 @@ C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobile
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.Views.MainPage.xaml.g.cs
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.dll
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.pdb
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.Views.FacebookProfilePage.xaml.g.cs
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\Newtonsoft.Json.dll
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\System.Net.Http.dll
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\System.Net.Primitives.dll
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\Newtonsoft.Json.xml
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\System.Net.Http.xml
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\System.Net.Primitives.xml
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\mobileapp.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.Views.FacebookProfilePage.xaml.g.cs
