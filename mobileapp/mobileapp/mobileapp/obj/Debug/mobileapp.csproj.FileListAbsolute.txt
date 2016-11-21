@@ -30,3 +30,4 @@ C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobile
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.pdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\bin\Debug\mobileapp.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\obj\Debug\mobileapp.Views.FacebookProfilePage.xaml.g.cs

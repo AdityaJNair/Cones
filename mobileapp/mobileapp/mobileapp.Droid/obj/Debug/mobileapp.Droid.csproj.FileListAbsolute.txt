@@ -144,5 +144,7 @@ C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\res\drawable\cones.png
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\Newtonsoft.Json.xml
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\mobileapp.Droid.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\mobileapp.Droid.dll.mdb

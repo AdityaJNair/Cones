@@ -14,5 +14,15 @@ namespace mobileapp.Views
         {
             InitializeComponent();
         }
+
+        private async void LoginWithFacebook_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FacebookProfilePage());
+        }
+
+        private async void QuckAccess_Clicked(object sender, EventArgs e)
+        {
+            //..fill
+        }
     }
 }
