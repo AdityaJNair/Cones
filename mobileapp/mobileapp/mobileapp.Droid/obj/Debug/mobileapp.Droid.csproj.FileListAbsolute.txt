@@ -146,5 +146,13 @@ C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\res\drawable\cones.png
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\Newtonsoft.Json.dll
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\Newtonsoft.Json.xml
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\Microsoft.CSharp.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\Mono.CSharp.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\System.Net.Http.dll
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\System.Net.Primitives.dll
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\System.Net.Http.xml
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\System.Net.Primitives.xml
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\obj\Debug\mobileapp.Droid.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.Droid\bin\Debug\mobileapp.Droid.dll.mdb

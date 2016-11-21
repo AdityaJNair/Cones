@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace mobileapp {
+namespace mobileapp.Views {
     using System;
     using Xamarin.Forms;
     using Xamarin.Forms.Xaml;

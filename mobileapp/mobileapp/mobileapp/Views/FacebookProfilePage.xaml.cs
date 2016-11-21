@@ -13,15 +13,18 @@ namespace mobileapp.Views
     public partial class FacebookProfilePage : ContentPage
     {
 
-        private string App_ID = "1318043361573270";
+        /// <summary>
+        /// Make sure to get a new ClientId from:
+        /// https://developers.facebook.com/apps/
+        /// </summary>
+        private string ClientId = "1318043361573270";
 
         public FacebookProfilePage()
         {
             InitializeComponent();
-
             var apiRequest =
                             "https://www.facebook.com/dialog/oauth?client_id="
-                            + App_ID
+                            + ClientId
                             + "&display=popup&response_type=token&redirect_uri=http://www.facebook.com/connect/login_success.html";
 
             var webView = new WebView

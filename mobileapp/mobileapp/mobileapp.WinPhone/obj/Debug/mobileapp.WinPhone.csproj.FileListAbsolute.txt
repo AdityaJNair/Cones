@@ -45,3 +45,5 @@ C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\obj\Deb
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\obj\Debug\Xamarin.Forms.Platform.WinRT.pri.xml
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\obj\Debug\Xamarin.Forms.Platform.WinRT.Phone.pri.xml
 C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\obj\Debug\ProjectArchitectures.txt
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\bin\Debug\Newtonsoft.Json.xml
