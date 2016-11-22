@@ -22,6 +22,7 @@ namespace FacebookLogin.Views
         /// https://developers.facebook.com/apps/
         /// </summary>
         private string ClientId = "1693968570915552";
+        private string userid;
 
         public FacebookProfileCsPage()
         {
@@ -86,7 +87,7 @@ namespace FacebookLogin.Views
             var vm = BindingContext as FacebookViewModel;
             //gets the facebookprofile info
             await vm.SetFacebookUserProfileAsync(accessToken);
-
+            this.userid = vm.FacebookProfile.Id;
             Users entry = new Users(vm.FacebookProfile.Name.ToString(), vm.FacebookProfile.Gender.ToString(), vm.FacebookProfile.Id.ToString(), vm.FacebookProfile.AgeRange.Min, DateTime.Now);
 
             await AzureManager.AzureManagerInstance.AddUsers(entry);
@@ -191,7 +192,7 @@ namespace FacebookLogin.Views
 
         private async void OrderIceCream_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new OrdersView());
+            await Navigation.PushAsync(new OrdersView(this.userid));
         }
 
         /// <summary>

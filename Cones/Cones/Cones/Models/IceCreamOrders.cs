@@ -23,9 +23,11 @@ namespace Cones.Models
         [JsonProperty(PropertyName = "createdAt")]
         public DateTime date { get; set; }
 
-        public IceCreamOrders(string userId)
+        public IceCreamOrders(string userId, DateTime date, string flavour)
         {
             this.userId = userId;
+            this.flavours = flavours;
+            this.date = date;
         }
     }
 }
