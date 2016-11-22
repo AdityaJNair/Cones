@@ -88,8 +88,8 @@ namespace FacebookLogin.Views
             //gets the facebookprofile info
             await vm.SetFacebookUserProfileAsync(accessToken);
             this.userid = vm.FacebookProfile.Id;
-            Users entry = new Users(vm.FacebookProfile.Name.ToString(), vm.FacebookProfile.Gender.ToString(), vm.FacebookProfile.Id.ToString(), vm.FacebookProfile.AgeRange.Min, DateTime.Now);
 
+            Users entry = new Users(vm.FacebookProfile.Name.ToString(), vm.FacebookProfile.Gender.ToString(), vm.FacebookProfile.Id.ToString(), vm.FacebookProfile.AgeRange.Min, DateTime.Now);
             await AzureManager.AzureManagerInstance.AddUsers(entry);
             //Sends the accsestoken and facebook profile across
             CreateView(vm.FacebookProfile);

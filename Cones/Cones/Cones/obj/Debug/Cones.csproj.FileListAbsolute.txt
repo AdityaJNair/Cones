@@ -24,5 +24,3 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.pdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll.mdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll.mdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll.mdb

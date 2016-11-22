@@ -78,7 +78,16 @@ namespace Cones
         //Users -- only adding them to the database
         public async Task AddUsers(Users users)
         {
-            await this.usersTable.InsertAsync(users);
+            List<Users> userlist = await GetUsers(users.userId);
+            if (userlist == null || userlist.Count == 0)
+            {
+                await this.usersTable.InsertAsync(users);
+            }
+        }
+
+        public async Task<List<Users>> GetUsers(string userid)
+        {
+            return await this.usersTable.Where(Users => Users.userId == userid).ToListAsync();
         }
     }
 }

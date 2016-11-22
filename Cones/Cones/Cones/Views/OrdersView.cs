@@ -19,7 +19,7 @@ namespace Cones.Views
             this.userid = userid;
 
             //main scroll view
-            BackgroundColor = Color.White;
+            BackgroundColor = Color.FromRgb(253, 240, 197);
             //var scrollview = new ScrollView();
             //Content = scrollview;
 
@@ -150,6 +150,7 @@ namespace Cones.Views
 
             //Date and time for cart
             TimePicker timePicker = new TimePicker();
+            timePicker.Time = DateTime.Now.TimeOfDay;
             DatePicker datePicker = new DatePicker();
             datePicker.Format = "D";
             datePicker.VerticalOptions = LayoutOptions.CenterAndExpand;
