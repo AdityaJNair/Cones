@@ -87,5 +87,14 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\asse
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\vanilla.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\chocolate.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\strawberry.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\mint.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\rasberry.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\coffee.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\cookie.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\french.jpg
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\mango.jpg
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\Cones.Droid.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb

@@ -50,6 +50,7 @@
     <Compile Include="Views\MapsView.cs" />
     <Compile Include="Views\OrdersView.cs" />
     <Compile Include="Views\Selfie.cs" />
+    <Compile Include="Views\StoreViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

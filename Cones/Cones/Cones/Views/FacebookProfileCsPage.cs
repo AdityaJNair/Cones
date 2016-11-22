@@ -127,7 +127,7 @@ namespace FacebookLogin.Views
 
             //account
             var accountlabel = new Label();
-            accountlabel.Text = "Welcome " + facebookProfile.FirstName.ToString()+" " +facebookProfile.LastName.ToString();
+            accountlabel.Text = "Welcome to Cones " + facebookProfile.FirstName.ToString() + " " + facebookProfile.LastName.ToString();
             accountlabel.TextColor = Color.Black;
             accountlabel.FontSize = 20;
             accountlabel.FontAttributes = FontAttributes.Bold;

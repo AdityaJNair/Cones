@@ -17,18 +17,8 @@ namespace Cones.Models
         [JsonProperty(PropertyName = "userId")]
         public string userId;
 
-        enum Flavours { Chocolate, Vanilla, Strawberry }
-        enum Toppings { Chocolate_sprinkles }
-        enum Scoops { Single, Double, Triple }
-
         [JsonProperty(PropertyName = "flavour")]
-        Flavours _flavours { get; set; }
-
-        [JsonProperty(PropertyName = "scoops")]
-        Scoops _scoops { get; set; }
-
-        [JsonProperty(PropertyName = "toppings")]
-        Toppings toppings { get; set; }
+        public string flavours { get; set; }
 
         [JsonProperty(PropertyName = "createdAt")]
         public DateTime date { get; set; }
