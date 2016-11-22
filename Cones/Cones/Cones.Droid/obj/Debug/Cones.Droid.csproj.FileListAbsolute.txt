@@ -82,5 +82,6 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\asse
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\waferwllpaper.png
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\Cones.Droid.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb

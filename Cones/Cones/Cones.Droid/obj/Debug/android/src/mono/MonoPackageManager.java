@@ -121,7 +121,6 @@ class MonoPackageManager_Resources {
 		"System.Diagnostics.Debug.dll",
 		"System.Threading.Tasks.dll",
 		"System.ObjectModel.dll",
-		"System.Diagnostics.Tools.dll",
 		"System.Threading.dll",
 		"System.IO.dll",
 		"System.Xml.XDocument.dll",

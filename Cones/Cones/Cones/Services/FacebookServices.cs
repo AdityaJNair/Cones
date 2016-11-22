@@ -16,7 +16,7 @@ namespace FacebookLogin.Services
         public async Task<FacebookProfile> GetFacebookProfileAsync(string accessToken)
         {
             var requestUrl =
-                "https://graph.facebook.com/v2.7/me/?fields=name,picture,age_range,first_name,last_name,gender&access_token="
+                "https://graph.facebook.com/v2.7/me/?fields=name,picture.width(550).height(550),age_range,first_name,last_name,gender&access_token="
                 + accessToken;
 
             var httpClient = new HttpClient();

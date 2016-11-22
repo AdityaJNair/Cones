@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace FacebookLogin.Views
@@ -32,6 +33,7 @@ namespace FacebookLogin.Views
                 }
             };
         }
+
 
         private async void LoginWithFacebook_Clicked(object sender, EventArgs e)
         {

@@ -37,14 +37,15 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Models\FacebookProfile.cs" />
+    <Compile Include="Models\IceCream.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Timeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FacebookServices.cs" />
     <Compile Include="ViewModels\FacebookViewModel.cs" />
     <Compile Include="Views\FacebookProfileCsPage.cs" />
     <Compile Include="Views\MainCsPage.cs" />
-    <Compile Include="Views\UserProfile.xaml.cs">
-      <DependentUpon>UserProfile.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\ProfilePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -79,12 +80,6 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\UserProfile.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

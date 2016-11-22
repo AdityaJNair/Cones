@@ -30,7 +30,6 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\asse
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.Threading.Tasks.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.ObjectModel.dll
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.Diagnostics.Tools.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.Threading.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.IO.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
