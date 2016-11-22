@@ -1,6 +1,7 @@
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll.config
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.pdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Microsoft.WindowsAzure.Mobile.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Newtonsoft.Json.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\System.Net.Http.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\System.Net.Http.Extensions.dll
@@ -8,6 +9,7 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\System.Net.Http.Pr
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Xamarin.Forms.Core.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Microsoft.WindowsAzure.Mobile.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Newtonsoft.Json.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\System.Net.Http.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\System.Net.Http.Extensions.xml
@@ -20,6 +22,5 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Xamarin.Forms.Xaml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.csproj.App.config
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.pdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.csprojResolveAssemblyReference.cache
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\obj\Debug\Cones.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones\bin\Debug\Cones.dll.mdb

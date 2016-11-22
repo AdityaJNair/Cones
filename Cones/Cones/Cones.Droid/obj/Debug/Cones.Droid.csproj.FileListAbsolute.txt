@@ -5,6 +5,8 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid-Signed.apk
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\FormsViewGroup.dll
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.WindowsAzure.Mobile.dll
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.WindowsAzure.Mobile.Ext.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Newtonsoft.Json.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\System.Net.Http.Primitives.dll
@@ -23,6 +25,8 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Xamarin.Form
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.pdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\FormsViewGroup.pdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\FormsViewGroup.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.WindowsAzure.Mobile.xml
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.WindowsAzure.Mobile.Ext.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Newtonsoft.Json.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\System.Net.Http.Primitives.xml
@@ -46,6 +50,7 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\layout\t
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\layout\toolbar.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\values\styles.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\cones.png
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\waferwllpaper.png
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\R.cs.flag
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\uploadflags.txt
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb
@@ -82,6 +87,5 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\asse
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable\waferwllpaper.png
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\Cones.Droid.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb

@@ -86,6 +86,10 @@ namespace FacebookLogin.Views
             var vm = BindingContext as FacebookViewModel;
             //gets the facebookprofile info
             await vm.SetFacebookUserProfileAsync(accessToken);
+
+            Users entry = new Users(vm.FacebookProfile.Name.ToString(), vm.FacebookProfile.Gender.ToString(), vm.FacebookProfile.Id.ToString(), vm.FacebookProfile.AgeRange.Min, DateTime.Now);
+
+            await AzureManager.AzureManagerInstance.AddUsers(entry);
             //Sends the accsestoken and facebook profile across
             CreateView(vm.FacebookProfile);
         }
@@ -170,24 +174,24 @@ namespace FacebookLogin.Views
             stack.Children.Add(maps);
         }
 
-        private void CheckHistory_Clicked(object sender, EventArgs e)
+        private async void CheckHistory_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new HistoryView());
         }
 
-        private void TakePhoto_Clicked(object sender, EventArgs e)
+        private async void TakePhoto_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new Selfie());
         }
 
-        private void GetDirections_Clicked(object sender, EventArgs e)
+        private async void GetDirections_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new MapsView());
         }
 
-        private void OrderIceCream_Clicked(object sender, EventArgs e)
+        private async void OrderIceCream_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new OrdersView());
         }
 
         /// <summary>
@@ -213,5 +217,7 @@ namespace FacebookLogin.Views
 
             return string.Empty;
         }
+
+
     }
 }
