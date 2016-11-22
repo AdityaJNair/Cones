@@ -1,2 +1,0 @@
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp.WinPhone\mobileapp.WinPhone.csproj;neutral
-C:\Users\adijn\Desktop\MSA_Phase2\mobileapp\mobileapp\mobileapp\mobileapp.csproj;neutral
