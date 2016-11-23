@@ -77,12 +77,14 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\drawable
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\res\xml\file_paths.xml
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\R.cs.flag
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\uploadflags.txt
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Plugin.Media.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Plugin.Media.Abstractions.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Plugin.Permissions.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Plugin.Permissions.Abstractions.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.ProjectOxford.Common.dll
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.ProjectOxford.Emotion.dll
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb
+C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Java.Interop.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.CSharp.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Mono.Android.dll.mdb
@@ -119,7 +121,5 @@ C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\asse
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.ProjectOxford.Common.dll
-C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Microsoft.ProjectOxford.Emotion.dll
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\obj\Debug\Cones.Droid.dll.mdb
 C:\Users\adijn\Desktop\MSA_Phase2\Cones\Cones\Cones.Droid\bin\Debug\Cones.Droid.dll.mdb

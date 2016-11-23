@@ -80,6 +80,11 @@ namespace Cones
             await this.ordersTable.DeleteAsync(order);
         }
 
+        public async Task UpdateIceCreamOrders(IceCreamOrders order)
+        {
+            await this.ordersTable.UpdateAsync(order);
+        }
+
         //Users -- only adding them to the database
         public async Task AddUsers(Users users)
         {

@@ -49,6 +49,7 @@
     <Compile Include="Views\FacebookPage.cs" />
     <Compile Include="Views\FacebookProfileCsPage.cs" />
     <Compile Include="Views\HistoryTab.cs" />
+    <Compile Include="Views\ModifyOrders.cs" />
     <Compile Include="Views\OrderHistory.cs" />
     <Compile Include="Views\MainCsPage.cs" />
     <Compile Include="Views\OrdersView.cs" />

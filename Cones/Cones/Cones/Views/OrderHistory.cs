@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Cones.Models;
 using Cones;
+using System.Collections.ObjectModel;
 
 namespace Cones.Views
 {
@@ -35,11 +36,13 @@ namespace Cones.Views
             // Define some data.
             List<IceCreamOrders> icecreamorders = await AzureManager.AzureManagerInstance.GetIceCreamOrders(userid);
             icecreamorders.Reverse();
+            ObservableCollection<IceCreamOrders> obicecreamorders = new ObservableCollection<IceCreamOrders>(icecreamorders);
             // Create the ListView.
+
             ListView listView = new ListView
             {
                 // Source of data items.
-                ItemsSource = icecreamorders,
+                ItemsSource = obicecreamorders,
                 // Define template for displaying each item.
                 // (Argument of DataTemplate constructor is called for 
                 //      each item; it must return a Cell derivative.)
@@ -93,6 +96,39 @@ namespace Cones.Views
             Content = stackl;
             stackl.Children.Add(header);
             stackl.Children.Add(listView);
+
+            listView.ItemSelected += async (s, e) =>
+            {
+                if (e.SelectedItem == null)
+                {
+                    return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+                }
+
+                var index = (listView.ItemsSource as ObservableCollection<IceCreamOrders>).IndexOf(e.SelectedItem as IceCreamOrders);
+                IceCreamOrders tmp = obicecreamorders.ElementAt(index);
+                if(tmp.date < DateTime.Now)
+                {
+                    return;
+                } else
+                {
+                    var result = await DisplayActionSheet("Modify this order?", "Cancel", null, "Update", "Delete"); // since we are using async, we should specify the DisplayAlert as awaiting.
+                    if (result.Equals("Update")) // if it's equal to Ok
+                    {
+                        await Navigation.PushAsync(new OrdersView(this.userid, tmp));
+                        this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
+                    }
+                    else if (result.Equals("Delete")) // if it's equal to Cancel
+                    {
+                        await AzureManager.AzureManagerInstance.DeleteIceCreamOrders(tmp);
+                        obicecreamorders.Remove(tmp);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+            };
         }
     }
 

@@ -13,7 +13,7 @@ namespace Cones.Views
     class OrdersView : ContentPage
     {
         private string userid;
-        public OrdersView(string userid)
+        public OrdersView(string userid,IceCreamOrders modifyorder)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             this.userid = userid;
@@ -197,10 +197,23 @@ namespace Cones.Views
                 {
                     DateTime temp = new DateTime(datePicker.Date.Year, datePicker.Date.Month, datePicker.Date.Day, timePicker.Time.Hours, timePicker.Time.Minutes, timePicker.Time.Seconds, timePicker.Time.Milliseconds);
                     string flavour = label.Text.Substring(18, label.Text.Length - 18);
-                    IceCreamOrders order1 = new IceCreamOrders(userid, temp, flavour, getImageName(flavour));
-                    await AzureManager.AzureManagerInstance.AddIceCreamOrder(order1);
-                    await DisplayAlert("Completed", "Your order has been sent through.", "OK");
-                    await Navigation.PopAsync();
+                    if(modifyorder == null)
+                    {
+                        IceCreamOrders order1 = new IceCreamOrders(userid, temp, flavour, getImageName(flavour));
+                        await AzureManager.AzureManagerInstance.AddIceCreamOrder(order1);
+                        await DisplayAlert("Completed", "Your order has been sent through.", "OK");
+                        await Navigation.PopAsync();
+                    } else
+                    {
+                        modifyorder.date = temp;
+                        modifyorder.flavour = flavour;
+                        modifyorder.filename = getImageName(flavour);
+                        await AzureManager.AzureManagerInstance.UpdateIceCreamOrders(modifyorder);
+                        await DisplayAlert("Completed", "Your order has been modified.", "OK");
+                        await Navigation.PopAsync();
+                    }
+
+
                 }
 
             };
