@@ -53,9 +53,14 @@ namespace Cones
             await this.timelineTable.InsertAsync(timeline);
         }
 
-        public async Task<List<Timeline>> GetTimelines()
+        public async Task<List<Timeline>> GetTimelines(string userId)
         {
-            return await this.timelineTable.ToListAsync();
+            return await this.timelineTable.Where(Timeline => Timeline.Userid == userId).ToListAsync();
+        }
+
+        public async Task DeleteTimeline(Timeline timeline)
+        {
+            await this.timelineTable.DeleteAsync(timeline);
         }
 
         //Ice Cream orders

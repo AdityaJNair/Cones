@@ -34,13 +34,12 @@ namespace Cones.Views
 
             // Define some data.
             List<IceCreamOrders> icecreamorders = await AzureManager.AzureManagerInstance.GetIceCreamOrders(userid);
-
+            icecreamorders.Reverse();
             // Create the ListView.
             ListView listView = new ListView
             {
                 // Source of data items.
                 ItemsSource = icecreamorders,
-
                 // Define template for displaying each item.
                 // (Argument of DataTemplate constructor is called for 
                 //      each item; it must return a Cell derivative.)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Xamarin.Forms;
+using Cones.Views;
 
 namespace FacebookLogin.Views
 {
@@ -19,7 +20,15 @@ namespace FacebookLogin.Views
                 BackgroundColor = Color.FromHex("#01579B"),
             };
 
+            var visitpage = new Button
+            {
+                Text = "Visit our facebook page",
+                TextColor = Color.Black,
+                BackgroundColor = Color.FromHex("#99CC99")
+            };
+
             loginButton.Clicked += LoginWithFacebook_Clicked;
+            visitpage.Clicked += VisitFacebookPage_Clicked;
 
             Content = new StackLayout
             {
@@ -29,11 +38,16 @@ namespace FacebookLogin.Views
                 Orientation = StackOrientation.Vertical,
                 Children =
                 {
-                    loginButton
+                    loginButton,
+                    visitpage
                 }
             };
         }
 
+        private async void VisitFacebookPage_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FacebookPage());
+        }
 
         private async void LoginWithFacebook_Clicked(object sender, EventArgs e)
         {

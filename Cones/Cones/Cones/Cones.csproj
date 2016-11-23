@@ -46,6 +46,7 @@
     <Compile Include="Services\FacebookServices.cs" />
     <Compile Include="ViewModels\FacebookViewModel.cs" />
     <Compile Include="Views\CognitiveImageView.cs" />
+    <Compile Include="Views\FacebookPage.cs" />
     <Compile Include="Views\FacebookProfileCsPage.cs" />
     <Compile Include="Views\HistoryTab.cs" />
     <Compile Include="Views\OrderHistory.cs" />

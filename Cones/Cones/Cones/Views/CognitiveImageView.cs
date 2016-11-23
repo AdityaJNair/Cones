@@ -31,6 +31,13 @@ namespace Cones.Views
             stackmain.Spacing = 10;
             stackmain.VerticalOptions = LayoutOptions.CenterAndExpand;
 
+            Label top = new Label
+            {
+                Text = "Take a selfie and we will recommend you a flavour based on how you're feeling today!",
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
             Label header = new Label
             {
                 Text = "Current mood: ___________",
@@ -69,6 +76,7 @@ namespace Cones.Views
             buttonphoto.TextColor = Color.Black;
             buttonphoto.BackgroundColor = Color.Silver;
 
+            stackmain.Children.Add(top);
             stackmain.Children.Add(header);
             stackmain.Children.Add(buttonphoto);
             stackmain.Children.Add(UploadingIndicator);
@@ -80,6 +88,8 @@ namespace Cones.Views
 
             buttonphoto.Clicked += async (s, e) =>
             {
+
+
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
@@ -116,19 +126,10 @@ namespace Cones.Views
                     comment.Text = comentText(result[0].Scores.ToRankedList().ElementAt(0).Key);
                     recommended.Text = recommend(result[0].Scores.ToRankedList().ElementAt(0).Key, gender, age);
                     filename.Text = getImageName(recommended.Text);
-                    Timeline emo = new Timeline()
-                    {
-                        Anger = temp.Anger,
-                        Contempt = temp.Contempt,
-                        Disgust = temp.Disgust,
-                        Fear = temp.Fear,
-                        Happiness = temp.Happiness,
-                        Neutral = temp.Neutral,
-                        Sadness = temp.Sadness,
-                        Surprise = temp.Surprise,
-                        Date = DateTime.Now
-                    };
 
+                    Timeline emo = new Timeline(header.Text, recommended.Text, filename.Text,userid);
+                    await AzureManager.AzureManagerInstance.AddTimeline(emo);
+                    buttonphoto.Text = "Take another";
                 }
                 catch (Exception ex)
                 {

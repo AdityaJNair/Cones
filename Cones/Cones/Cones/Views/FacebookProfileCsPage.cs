@@ -155,7 +155,7 @@ namespace FacebookLogin.Views
 
             //take photo button
             var takePhoto = new Button();
-            takePhoto.Text = "Share your experience with a selfie!";
+            takePhoto.Text = "Recommend me a flavour";
             takePhoto.Clicked += TakePhoto_Clicked;
 
             //order icecream button
@@ -165,7 +165,7 @@ namespace FacebookLogin.Views
             
             //order icecream button
             var quotes = new Button();
-            quotes.Text = "Motto of the day";
+            quotes.Text = "Inspire me";
             quotes.Clicked += GetQuote_Clicked;
 
             //adding children to stack

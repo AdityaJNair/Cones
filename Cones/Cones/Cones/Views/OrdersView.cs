@@ -199,6 +199,8 @@ namespace Cones.Views
                     string flavour = label.Text.Substring(18, label.Text.Length - 18);
                     IceCreamOrders order1 = new IceCreamOrders(userid, temp, flavour, getImageName(flavour));
                     await AzureManager.AzureManagerInstance.AddIceCreamOrder(order1);
+                    await DisplayAlert("Completed", "Your order has been sent through.", "OK");
+                    await Navigation.PopAsync();
                 }
 
             };

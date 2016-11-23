@@ -23,7 +23,16 @@ namespace Cones.Views
         {
             BackgroundColor = Color.FromRgb(253, 240, 197);
             var quotelabel = new Label();
+            quotelabel.TextColor = Color.Black;
+            quotelabel.FontSize = 30;
+            quotelabel.FontAttributes = FontAttributes.Bold;
+            quotelabel.HorizontalTextAlignment = TextAlignment.Center;
+
             var quoteAuthorLabel = new Label();
+            quoteAuthorLabel.TextColor = Color.Black;
+            quoteAuthorLabel.FontSize = 20;
+            quoteAuthorLabel.FontAttributes = FontAttributes.Italic;
+            quoteAuthorLabel.HorizontalTextAlignment = TextAlignment.Center;
 
             var stackmain = new StackLayout();
             Content = stackmain;
@@ -36,13 +45,28 @@ namespace Cones.Views
             stackmain.Children.Add(quoteAuthorLabel);
 
             Quote q = await GetQuotesAsync();
-
-            quotelabel.Text = q.quoteText;
+            Content = stackmain;
+            quotelabel.Text = "\""+q.quoteText+"\"";
             quoteAuthorLabel.Text = q.quoteAuthor;
         }
 
         public async Task<Quote> GetQuotesAsync()
         {
+            Content = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Spacing = 20,
+                Padding = 50,
+                BackgroundColor = Color.FromRgb(253, 240, 197),
+                Children =
+                {
+                    new ActivityIndicator
+                    {
+                        Color = Color.Red,
+                        IsRunning = true
+                    }
+                }
+            };
             var requestUrl =
                 "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
 
