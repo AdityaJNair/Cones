@@ -197,7 +197,7 @@ namespace Cones.Views
                 {
                     DateTime temp = new DateTime(datePicker.Date.Year, datePicker.Date.Month, datePicker.Date.Day, timePicker.Time.Hours, timePicker.Time.Minutes, timePicker.Time.Seconds, timePicker.Time.Milliseconds);
                     string flavour = label.Text.Substring(18, label.Text.Length - 18);
-                    IceCreamOrders order1 = new IceCreamOrders(userid, temp, flavour);
+                    IceCreamOrders order1 = new IceCreamOrders(userid, temp, flavour, getImageName(flavour));
                     await AzureManager.AzureManagerInstance.AddIceCreamOrder(order1);
                 }
 
@@ -210,9 +210,46 @@ namespace Cones.Views
             mainstack.Children.Add(addOrder);
         }
 
-        private void checkValid_DateSelected(object sender, DateChangedEventArgs e)
+        public string getImageName(string flavour)
         {
-            throw new NotImplementedException();
+            if (flavour.Equals("Vanilla"))
+            {
+                return "vanilla.jpg";
+
+            }
+            else if (flavour.Equals("Chocolate"))
+            {
+                return "Chocolate.jpg";
+            }
+            else if (flavour.Equals("Strawberry"))
+            {
+                return "strawberry.jpg";
+            }
+            else if (flavour.Equals("French Vanilla"))
+            {
+                return "French.png";
+            }
+            else if (flavour.Equals("Mint Chocolate"))
+            {
+                return "mint.jpg";
+            }
+            else if (flavour.Equals("Cookies n Cream"))
+            {
+                return "cookie.jpg";
+            }
+            else if (flavour.Equals("Coffee"))
+            {
+                return "coffee.jpg";
+            }
+            else if (flavour.Equals("Mango"))
+            {
+                return "mango.jpg";
+            }
+            else if (flavour.Equals("Rasberry"))
+            {
+                return "rasberry.jpg";
+            }
+            return "";
         }
     }
 }

@@ -14,17 +14,19 @@ namespace Cones.Models
         [JsonProperty(PropertyName = "Id")]
         public string ID { get; set; }
         [JsonProperty(PropertyName = "userId")]
-        public string userId;
+        public string userId { get; set; }
         [JsonProperty(PropertyName = "flavour")]
         public string flavour { get; set; }
         [JsonProperty(PropertyName = "date")]
         public DateTime date { get; set; }
+        public string filename { get; set; }
 
-        public IceCreamOrders(string userId, DateTime date, string flavour)
+        public IceCreamOrders(string userId, DateTime date, string flavour,string filename)
         {
             this.userId = userId;
             this.flavour = flavour;
             this.date = date;
+            this.filename = filename;
         }
     }
 }

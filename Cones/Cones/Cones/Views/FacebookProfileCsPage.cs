@@ -23,6 +23,8 @@ namespace FacebookLogin.Views
         /// </summary>
         private string ClientId = "1693968570915552";
         private string userid;
+        private string gender;
+        private int age;
 
         public FacebookProfileCsPage()
         {
@@ -88,7 +90,8 @@ namespace FacebookLogin.Views
             //gets the facebookprofile info
             await vm.SetFacebookUserProfileAsync(accessToken);
             this.userid = vm.FacebookProfile.Id;
-
+            this.age = vm.FacebookProfile.AgeRange.Min;
+            this.gender = vm.FacebookProfile.Gender;
             Users entry = new Users(vm.FacebookProfile.Name.ToString(), vm.FacebookProfile.Gender.ToString(), vm.FacebookProfile.Id.ToString(), vm.FacebookProfile.AgeRange.Min, DateTime.Now);
             await AzureManager.AzureManagerInstance.AddUsers(entry);
             //Sends the accsestoken and facebook profile across
@@ -161,9 +164,9 @@ namespace FacebookLogin.Views
             orderIceCream.Clicked += OrderIceCream_Clicked;
             
             //order icecream button
-            var maps = new Button();
-            maps.Text = "Get Directions";
-            maps.Clicked += GetDirections_Clicked;
+            var quotes = new Button();
+            quotes.Text = "Motto of the day";
+            quotes.Clicked += GetQuote_Clicked;
 
             //adding children to stack
             //stack.Children.Add(welcomeLabel);
@@ -172,22 +175,22 @@ namespace FacebookLogin.Views
             stack.Children.Add(checkHistory);
             stack.Children.Add(takePhoto);
             stack.Children.Add(orderIceCream);
-            stack.Children.Add(maps);
+            stack.Children.Add(quotes);
+        }
+
+        private async void GetQuote_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QuoteView());
         }
 
         private async void CheckHistory_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HistoryView());
+            await Navigation.PushAsync(new HistoryTab(this.userid));
         }
 
         private async void TakePhoto_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Selfie());
-        }
-
-        private async void GetDirections_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MapsView());
+            await Navigation.PushAsync(new CognitiveImageView(userid,age,gender));
         }
 
         private async void OrderIceCream_Clicked(object sender, EventArgs e)

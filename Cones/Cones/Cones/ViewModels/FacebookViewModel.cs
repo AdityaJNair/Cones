@@ -24,11 +24,6 @@ namespace FacebookLogin.ViewModels
             }
         }
 
-        /// <summary>
-        /// Gets profile information through asynchronous request
-        /// </summary>
-        /// <param name="accessToken"></param>
-        /// <returns></returns>
         public async Task SetFacebookUserProfileAsync(string accessToken)
         {
             var facebookServices = new FacebookServices();
