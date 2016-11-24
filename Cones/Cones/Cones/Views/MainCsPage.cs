@@ -11,7 +11,7 @@ namespace FacebookLogin.Views
         public MainCsPage()
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            BackgroundImage = "cones.png";
+            BackgroundImage = "cones2.png";
 
             var loginButton = new Button
             {
@@ -32,7 +32,7 @@ namespace FacebookLogin.Views
 
             Content = new StackLayout
             {
-                Spacing = 0,
+                Spacing = 10,
                 Padding = 10,
                 VerticalOptions = LayoutOptions.End,
                 Orientation = StackOrientation.Vertical,

@@ -13,13 +13,14 @@ namespace Cones.Views
     class OrdersView : ContentPage
     {
         private string userid;
-        public OrdersView(string userid,IceCreamOrders modifyorder)
+        public OrdersView(string userid,IceCreamOrders modifyorder, string selflavour)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             this.userid = userid;
 
             //main scroll view
-            BackgroundColor = Color.FromRgb(253, 240, 197);
+            //BackgroundColor = Color.FromRgb(253, 240, 197);
+            BackgroundImage = "thin.png";
             //var scrollview = new ScrollView();
             //Content = scrollview;
 
@@ -115,7 +116,13 @@ namespace Cones.Views
             tab.Root.Add(tabsel);
 
             var label = new Label();
-            label.Text = "Flavour selected: None";
+            if (selflavour != null)
+            {
+                label.Text = "Flavour selected: "+selflavour;
+            } else
+            {
+                label.Text = "Flavour selected: None";
+            }
             label.FontSize = 20;
             label.FontAttributes = FontAttributes.Bold;
 

@@ -21,7 +21,8 @@ namespace Cones.Views
 
         private async void QuoteGenView()
         {
-            BackgroundColor = Color.FromRgb(253, 240, 197);
+            //BackgroundColor = Color.FromRgb(253, 240, 197);
+            BackgroundImage = "inspire.png";
             var quotelabel = new Label();
             quotelabel.TextColor = Color.Black;
             quotelabel.FontSize = 30;
@@ -57,7 +58,7 @@ namespace Cones.Views
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Spacing = 20,
                 Padding = 50,
-                BackgroundColor = Color.FromRgb(253, 240, 197),
+                BackgroundColor = Color.Transparent,
                 Children =
                 {
                     new ActivityIndicator

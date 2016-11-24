@@ -16,7 +16,7 @@ namespace Cones.Views
         {
             NavigationPage.SetHasNavigationBar(this, false);
             this.userid= userid;
-            BackgroundColor = Color.FromRgb(253, 240, 197);
+            //BackgroundColor = Color.FromRgb(253, 240, 197);
             createView();
         }
 
@@ -26,6 +26,7 @@ namespace Cones.Views
             Label header = new Label
             {
                 Text = "Photo recommendations",
+                FontAttributes = FontAttributes.Bold,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center
             };

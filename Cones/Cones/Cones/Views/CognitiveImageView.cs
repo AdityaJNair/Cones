@@ -22,39 +22,58 @@ namespace Cones.Views
             this.age = age;
             this.gender = gender;
             NavigationPage.SetHasNavigationBar(this, false);
-            BackgroundColor = Color.FromRgb(253, 240, 197);
+            BackgroundColor = Color.FromRgb(195, 246, 251);
             //Main stacklayout
             var stackmain = new StackLayout();
             Content = stackmain;
             stackmain.Orientation = StackOrientation.Vertical;
             stackmain.Padding = 10;
             stackmain.Spacing = 10;
-            stackmain.VerticalOptions = LayoutOptions.CenterAndExpand;
+            stackmain.VerticalOptions = LayoutOptions.Start;
 
             Label top = new Label
             {
-                Text = "Take a selfie and we will recommend you a flavour based on how you're feeling today!",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
+                Text = "Photo Recommendation",
+                FontSize = 40,
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                FontAttributes = FontAttributes.Bold
             };
 
             Label header = new Label
             {
                 Text = "Current mood: ___________",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
+                FontSize = 35,
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            Label text = new Label
+            {
+                Text = "Take a selfie and we will recommend you a flavour based on how you're feeling today!",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center
             };
 
             Label comment = new Label
             {
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center
             };
 
-            Label recommended = new Label
+            Button recommended = new Button
             {
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                BackgroundColor = Color.Green,
+                TextColor = Color.White,
+                IsVisible = false,
+                BorderWidth = 1,
+                FontAttributes = FontAttributes.Bold
             };
 
             Label filename = new Label
@@ -62,9 +81,14 @@ namespace Cones.Views
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center
             };
-
-
-
+            /*
+            var recommendationFrame = new Frame();
+            recommendationFrame.OutlineColor = Color.Silver;
+            recommendationFrame.VerticalOptions = LayoutOptions.CenterAndExpand;
+            recommendationFrame.IsEnabled = false;
+            recommendationFrame.IsVisible = false;
+            recommendationFrame.Content = recommended;
+            */
             var UploadingIndicator = new ActivityIndicator();
             UploadingIndicator.Color = Color.Red;
             UploadingIndicator.IsRunning = false;
@@ -73,16 +97,16 @@ namespace Cones.Views
 
             var buttonphoto = new Button();
             buttonphoto.Text = "Take Picture";
-            buttonphoto.TextColor = Color.Black;
-            buttonphoto.BackgroundColor = Color.Silver;
+            buttonphoto.TextColor = Color.White;
+            buttonphoto.BackgroundColor = Color.FromRgb(232, 76, 61);
 
             stackmain.Children.Add(top);
-            stackmain.Children.Add(header);
+            stackmain.Children.Add(text);
             stackmain.Children.Add(buttonphoto);
+            stackmain.Children.Add(header);
             stackmain.Children.Add(UploadingIndicator);
             stackmain.Children.Add(comment);
             stackmain.Children.Add(recommended);
-            stackmain.Children.Add(filename);
             stackmain.Children.Add(errorLabel);
 
 
@@ -125,6 +149,9 @@ namespace Cones.Views
                     header.Text = changeText(result[0].Scores.ToRankedList().ElementAt(0).Key);
                     comment.Text = comentText(result[0].Scores.ToRankedList().ElementAt(0).Key);
                     recommended.Text = recommend(result[0].Scores.ToRankedList().ElementAt(0).Key, gender, age);
+                    recommended.IsVisible = true;
+                    //recommendationFrame.IsEnabled = true;
+                    //recommendationFrame.IsVisible = true;
                     filename.Text = getImageName(recommended.Text);
 
                     Timeline emo = new Timeline(header.Text, recommended.Text, filename.Text,userid);
@@ -133,11 +160,14 @@ namespace Cones.Views
                 }
                 catch (Exception ex)
                 {
-                    errorLabel.Text = ex.Message;
+                    errorLabel.Text = "Sorry, wasn't able to recognise the image. Please try again";
                 }
             };
 
-
+            recommended.Clicked += async (s, e) =>
+            {
+                await Navigation.PushAsync(new OrdersView(userid,null, recommended.Text));
+            };
         }
 
         public string changeText(string text)

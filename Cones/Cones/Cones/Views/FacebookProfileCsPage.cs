@@ -30,7 +30,9 @@ namespace FacebookLogin.Views
         {
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = new FacebookViewModel();
-            BackgroundColor = Color.FromRgb(253, 240, 197);
+            //BackgroundImage = "thick.png";
+            //BackgroundColor = Color.FromRgb(253, 240, 197);
+            //BackgroundColor = Color.FromHex("#C3F6FB");
 
             var apiRequest =
                 "https://www.facebook.com/dialog/oauth?client_id="
@@ -74,7 +76,8 @@ namespace FacebookLogin.Views
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Spacing = 20,
                 Padding = 50,
-                BackgroundColor = Color.FromRgb(253, 240, 197),
+                //BackgroundColor = Color.FromRgb(253, 240, 197),
+                //BackgroundColor = Color.FromHex("#C3F6FB"),
                 Children =
                 {
                     new ActivityIndicator
@@ -108,9 +111,9 @@ namespace FacebookLogin.Views
             var stack = new StackLayout();
             scrollpage.Content = stack;
             stack.Orientation = StackOrientation.Vertical;
-            stack.Padding = 10;
+            stack.Padding = 20;
             stack.Spacing = 10;
-            stack.VerticalOptions = LayoutOptions.CenterAndExpand;
+            stack.VerticalOptions = LayoutOptions.Center;
 
             //fb profile id unique to be used in db
             var facebookprofileId = new Label();
@@ -151,21 +154,33 @@ namespace FacebookLogin.Views
             //Check history of orders button
             var checkHistory = new Button();
             checkHistory.Text = "View History";
+            checkHistory.BorderWidth = 1;
+            checkHistory.BackgroundColor = Color.FromRgb(61, 136, 236);
+            checkHistory.TextColor = Color.White;
             checkHistory.Clicked += CheckHistory_Clicked;
 
             //take photo button
             var takePhoto = new Button();
             takePhoto.Text = "Recommend me a flavour";
+            takePhoto.BorderWidth = 1;
+            takePhoto.BackgroundColor = Color.FromRgb(61, 136, 236);
+            takePhoto.TextColor = Color.White;
             takePhoto.Clicked += TakePhoto_Clicked;
 
             //order icecream button
             var orderIceCream = new Button();
             orderIceCream.Text = "Order online";
+            orderIceCream.BorderWidth = 1;
+            orderIceCream.BackgroundColor = Color.FromRgb(61, 136, 236);
+            orderIceCream.TextColor = Color.White;
             orderIceCream.Clicked += OrderIceCream_Clicked;
             
             //order icecream button
             var quotes = new Button();
             quotes.Text = "Inspire me";
+            quotes.BorderWidth = 1;
+            quotes.BackgroundColor = Color.FromRgb(61, 136, 236);
+            quotes.TextColor = Color.White;
             quotes.Clicked += GetQuote_Clicked;
 
             //adding children to stack
@@ -195,7 +210,7 @@ namespace FacebookLogin.Views
 
         private async void OrderIceCream_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new OrdersView(this.userid,null));
+            await Navigation.PushAsync(new OrdersView(this.userid,null,null));
         }
 
         /// <summary>

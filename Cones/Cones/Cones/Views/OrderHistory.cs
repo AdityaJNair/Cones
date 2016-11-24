@@ -18,7 +18,7 @@ namespace Cones.Views
         {
             NavigationPage.SetHasNavigationBar(this, false);
             this.userid = userid;
-            BackgroundColor = Color.FromRgb(253, 240, 197);
+            //BackgroundColor = Color.FromRgb(253, 240, 197);
             createView();
 
         }
@@ -29,6 +29,7 @@ namespace Cones.Views
             Label header = new Label
             {
                 Text = "Previous Orders",
+                FontAttributes = FontAttributes.Bold,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center
             };
@@ -114,7 +115,7 @@ namespace Cones.Views
                     var result = await DisplayActionSheet("Modify this order?", "Cancel", null, "Update", "Delete"); // since we are using async, we should specify the DisplayAlert as awaiting.
                     if (result.Equals("Update")) // if it's equal to Ok
                     {
-                        await Navigation.PushAsync(new OrdersView(this.userid, tmp));
+                        await Navigation.PushAsync(new OrdersView(this.userid, tmp,tmp.flavour));
                         this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
                     }
                     else if (result.Equals("Delete")) // if it's equal to Cancel
