@@ -11,6 +11,7 @@ using System.Diagnostics;
 using Cones.Views;
 using Cones.Models;
 using Cones;
+using System.Net;
 
 namespace FacebookLogin.Views
 {
@@ -112,7 +113,7 @@ namespace FacebookLogin.Views
             scrollpage.Content = stack;
             stack.Orientation = StackOrientation.Vertical;
             stack.Padding = 20;
-            stack.Spacing = 10;
+            stack.Spacing = 5;
             stack.VerticalOptions = LayoutOptions.Center;
 
             //fb profile id unique to be used in db
@@ -183,6 +184,14 @@ namespace FacebookLogin.Views
             quotes.TextColor = Color.White;
             quotes.Clicked += GetQuote_Clicked;
 
+            //order icecream button
+            var maps = new Button();
+            maps.Text = "Get Directions";
+            maps.BorderWidth = 1;
+            maps.BackgroundColor = Color.FromRgb(61, 136, 236);
+            maps.TextColor = Color.White;
+            maps.Clicked += GetDirection_Clicked;
+
             //adding children to stack
             //stack.Children.Add(welcomeLabel);
             stack.Children.Add(imageFrame);
@@ -191,6 +200,28 @@ namespace FacebookLogin.Views
             stack.Children.Add(takePhoto);
             stack.Children.Add(orderIceCream);
             stack.Children.Add(quotes);
+            stack.Children.Add(maps);
+        }
+
+        private void GetDirection_Clicked(object sender, EventArgs e)
+        {
+            var address = "1 Queen Street, Auckland, 1010, New Zealand";
+            switch (Device.OS)
+            {
+                case TargetPlatform.iOS:
+                    Device.OpenUri(
+                        new Uri(string.Format("http://maps.apple.com/?q={0}", WebUtility.UrlEncode(address))));
+                    break;
+                case TargetPlatform.Android:
+                    Device.OpenUri(
+                        new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(address))));
+                    break;
+                case TargetPlatform.Windows:
+                case TargetPlatform.WinPhone:
+                    Device.OpenUri(
+                        new Uri(string.Format("bingmaps:?where={0}", Uri.EscapeDataString(address))));
+                    break;
+            }
         }
 
         private async void GetQuote_Clicked(object sender, EventArgs e)
