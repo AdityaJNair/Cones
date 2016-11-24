@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 
 namespace Cones.Models
 {
+    /// <summary>
+    /// Quote schema for Json deserialising via api
+    /// </summary>
     public class Quote
     {
         public string quoteText { get; set; }

@@ -8,6 +8,9 @@ using Cones.Models;
 
 namespace Cones.Views
 {
+    /// <summary>
+    /// Stores information about recommendations made by application for the user and on what date
+    /// </summary>
     class TimelineHistory : ContentPage
     {
         private string userid;
@@ -22,7 +25,7 @@ namespace Cones.Views
 
         public async void createView()
         {
-
+            //Title for list
             Label header = new Label
             {
                 Text = "Photo recommendations",

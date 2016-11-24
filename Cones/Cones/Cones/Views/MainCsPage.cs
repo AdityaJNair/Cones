@@ -5,6 +5,9 @@ using Cones.Views;
 
 namespace FacebookLogin.Views
 {
+    /// <summary>
+    /// Main page that is the first view to the user. Login or view facebookpage
+    /// </summary>
     public class MainCsPage : ContentPage
     {
 
@@ -13,6 +16,7 @@ namespace FacebookLogin.Views
             NavigationPage.SetHasNavigationBar(this, false);
             BackgroundImage = "cones2.png";
 
+            //login button
             var loginButton = new Button
             {
                 Text = "Login with Facebook",
@@ -20,6 +24,7 @@ namespace FacebookLogin.Views
                 BackgroundColor = Color.FromHex("#01579B"),
             };
 
+            //visit facebookpage button
             var visitpage = new Button
             {
                 Text = "Visit our facebook page",
@@ -44,11 +49,13 @@ namespace FacebookLogin.Views
             };
         }
 
+        //if view facebook button is pressed
         private async void VisitFacebookPage_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FacebookPage());
         }
 
+        //if login button is pressed
         private async void LoginWithFacebook_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FacebookProfileCsPage());

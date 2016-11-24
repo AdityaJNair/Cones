@@ -10,6 +10,9 @@ using Newtonsoft.Json.Linq;
 
 namespace FacebookLogin.Services
 {
+    /// <summary>
+    /// Service that asks for async http request with graph api and deserialises the json response object into a facebookprofile object
+    /// </summary>
     public class FacebookServices
     {
 

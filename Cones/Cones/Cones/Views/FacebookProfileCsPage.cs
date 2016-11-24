@@ -18,10 +18,7 @@ namespace FacebookLogin.Views
     public class FacebookProfileCsPage : ContentPage
     {
 
-        /// <summary>
-        /// Make sure to get a new ClientId from:
-        /// https://developers.facebook.com/apps/
-        /// </summary>
+        //Facebook api id
         private string ClientId = "1693968570915552";
         private string userid;
         private string gender;
@@ -31,10 +28,8 @@ namespace FacebookLogin.Views
         {
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = new FacebookViewModel();
-            //BackgroundImage = "thick.png";
-            //BackgroundColor = Color.FromRgb(253, 240, 197);
-            //BackgroundColor = Color.FromHex("#C3F6FB");
-
+            
+            //request login
             var apiRequest =
                 "https://www.facebook.com/dialog/oauth?client_id="
                 + ClientId
@@ -51,6 +46,7 @@ namespace FacebookLogin.Views
             Content = webView;
         }
 
+        //go to webview for getting token to confirm authentication
         private void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
         {
 
@@ -70,6 +66,7 @@ namespace FacebookLogin.Views
             }
         }
 
+        //Once successfully authenticated load to display the main content
         private async void SetPageLoading(string accessToken)
         {
             Content = new StackLayout
@@ -77,8 +74,6 @@ namespace FacebookLogin.Views
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Spacing = 20,
                 Padding = 50,
-                //BackgroundColor = Color.FromRgb(253, 240, 197),
-                //BackgroundColor = Color.FromHex("#C3F6FB"),
                 Children =
                 {
                     new ActivityIndicator
@@ -96,6 +91,7 @@ namespace FacebookLogin.Views
             this.userid = vm.FacebookProfile.Id;
             this.age = vm.FacebookProfile.AgeRange.Min;
             this.gender = vm.FacebookProfile.Gender;
+            //adds the user to the database
             Users entry = new Users(vm.FacebookProfile.Name.ToString(), vm.FacebookProfile.Gender.ToString(), vm.FacebookProfile.Id.ToString(), vm.FacebookProfile.AgeRange.Min, DateTime.Now);
             await AzureManager.AzureManagerInstance.AddUsers(entry);
             //Sends the accsestoken and facebook profile across
@@ -184,7 +180,7 @@ namespace FacebookLogin.Views
             quotes.TextColor = Color.White;
             quotes.Clicked += GetQuote_Clicked;
 
-            //order icecream button
+            //get direction button
             var maps = new Button();
             maps.Text = "Get Directions";
             maps.BorderWidth = 1;
@@ -203,6 +199,7 @@ namespace FacebookLogin.Views
             stack.Children.Add(maps);
         }
 
+        //Opens up google maps with the current direction on navigation mode to the fake addrses of Cones
         private void GetDirection_Clicked(object sender, EventArgs e)
         {
             var address = "1 Queen Street, Auckland, 1010, New Zealand";
@@ -224,6 +221,8 @@ namespace FacebookLogin.Views
             }
         }
 
+        //Open the other pages based on what button pressed
+
         private async void GetQuote_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new QuoteView());
@@ -244,11 +243,7 @@ namespace FacebookLogin.Views
             await Navigation.PushAsync(new OrdersView(this.userid,null,null));
         }
 
-        /// <summary>
-        /// Getting the access token
-        /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
+        //get the access token
         private string ExtractAccessTokenFromUrl(string url)
         {
             if (url.Contains("access_token") && url.Contains("&expires_in="))

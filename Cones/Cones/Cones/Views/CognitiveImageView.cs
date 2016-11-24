@@ -11,6 +11,9 @@ using Plugin.Media;
 using Cones.Models;
 namespace Cones.Views
 {
+    /// <summary>
+    /// Page that handles the recommendations based on photo analysed by microsoft cognitive services
+    /// </summary>
     class CognitiveImageView : ContentPage
     {
         private string userid;
@@ -18,11 +21,15 @@ namespace Cones.Views
         private int age;
         public CognitiveImageView(string userid, int age, string gender)
         {
+            //store user information
             this.userid = userid;
             this.age = age;
             this.gender = gender;
+
+            //remove navigation bar
             NavigationPage.SetHasNavigationBar(this, false);
             BackgroundColor = Color.FromRgb(195, 246, 251);
+            
             //Main stacklayout
             var stackmain = new StackLayout();
             Content = stackmain;
@@ -31,6 +38,7 @@ namespace Cones.Views
             stackmain.Spacing = 10;
             stackmain.VerticalOptions = LayoutOptions.Start;
 
+            //label for main title
             Label top = new Label
             {
                 Text = "Photo Recommendation",
@@ -40,6 +48,7 @@ namespace Cones.Views
                 FontAttributes = FontAttributes.Bold
             };
 
+            //label for header mood displayed and changed when photo taken
             Label header = new Label
             {
                 Text = "Current mood: ___________",
@@ -49,6 +58,7 @@ namespace Cones.Views
                 FontAttributes = FontAttributes.Bold
             };
 
+            //label for text that is shown that describes this page
             Label text = new Label
             {
                 Text = "Take a selfie and we will recommend you a flavour based on how you're feeling today!",
@@ -57,6 +67,7 @@ namespace Cones.Views
                 HorizontalTextAlignment = TextAlignment.Center
             };
 
+            //comment based on type of emotion found
             Label comment = new Label
             {
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
@@ -64,6 +75,7 @@ namespace Cones.Views
                 HorizontalTextAlignment = TextAlignment.Center
             };
 
+            //button which shows the flavour for ice cream on the text and when clicked sends the user view to order screen with that flavour selected
             Button recommended = new Button
             {
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
@@ -76,30 +88,21 @@ namespace Cones.Views
                 FontAttributes = FontAttributes.Bold
             };
 
-            Label filename = new Label
-            {
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
-            };
-            /*
-            var recommendationFrame = new Frame();
-            recommendationFrame.OutlineColor = Color.Silver;
-            recommendationFrame.VerticalOptions = LayoutOptions.CenterAndExpand;
-            recommendationFrame.IsEnabled = false;
-            recommendationFrame.IsVisible = false;
-            recommendationFrame.Content = recommended;
-            */
+            //Activity indicator when cognitive services is analysing the photo
             var UploadingIndicator = new ActivityIndicator();
             UploadingIndicator.Color = Color.Red;
             UploadingIndicator.IsRunning = false;
 
+            //error label
             var errorLabel = new Label();
 
+            //button for taking photo
             var buttonphoto = new Button();
             buttonphoto.Text = "Take Picture";
             buttonphoto.TextColor = Color.White;
             buttonphoto.BackgroundColor = Color.FromRgb(232, 76, 61);
 
+            //adding elements to the layout
             stackmain.Children.Add(top);
             stackmain.Children.Add(text);
             stackmain.Children.Add(buttonphoto);
@@ -109,11 +112,11 @@ namespace Cones.Views
             stackmain.Children.Add(recommended);
             stackmain.Children.Add(errorLabel);
 
-
+            //when take photo is clicked
             buttonphoto.Clicked += async (s, e) =>
             {
 
-
+                //check if camera is available
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
@@ -132,6 +135,7 @@ namespace Cones.Views
                     return;
                 try
                 {
+                    //start activity indicator
                     UploadingIndicator.IsRunning = true;
 
                     string emotionKey = "7e4f621d3aa241b59a0d853fcf1e4035";
@@ -142,19 +146,16 @@ namespace Cones.Views
 
 
                     UploadingIndicator.IsRunning = false;
-                    //Get values using this result[0].Scores.ToRankedList();
 
                     var temp = result[0].Scores;
 
+                    //set ffields to the labels
                     header.Text = changeText(result[0].Scores.ToRankedList().ElementAt(0).Key);
                     comment.Text = comentText(result[0].Scores.ToRankedList().ElementAt(0).Key);
                     recommended.Text = recommend(result[0].Scores.ToRankedList().ElementAt(0).Key, gender, age);
                     recommended.IsVisible = true;
-                    //recommendationFrame.IsEnabled = true;
-                    //recommendationFrame.IsVisible = true;
-                    filename.Text = getImageName(recommended.Text);
-
-                    Timeline emo = new Timeline(header.Text, recommended.Text, filename.Text,userid);
+                    //add to the database for timeline information for particular user based on userid
+                    Timeline emo = new Timeline(header.Text, recommended.Text, getImageName(recommended.Text), userid);
                     await AzureManager.AzureManagerInstance.AddTimeline(emo);
                     buttonphoto.Text = "Take another";
                 }
@@ -166,10 +167,12 @@ namespace Cones.Views
 
             recommended.Clicked += async (s, e) =>
             {
+                //if the button for recommendation is clicked take to a ordersview
                 await Navigation.PushAsync(new OrdersView(userid,null, recommended.Text));
             };
         }
 
+        //Changes the main emotion into a adjective to be displayed
         public string changeText(string text)
         {
             if (text.Equals("Anger"))
@@ -211,6 +214,7 @@ namespace Cones.Views
             }
         }
 
+        //adds a comment based on emotion found by cognitive services
         public string comentText(string text)
         {
             if (text.Equals("Anger"))
@@ -247,7 +251,9 @@ namespace Cones.Views
                 return "Wow, you suprised me too. Have a try of this.";
             }
         }
-
+        
+        //Recommendation based on each emotion having a list of all flavours that would be recommended to anyone, list of flavours for age ground and one for gender.
+        //Then all of them are linked based on the user and the ones that intersect (three way venn diagram) is the best choice. If multiple, a random one is selected in the best choice group.
         public string recommend(string text, string gender, int age)
         {
             Random rnd = new Random();
@@ -441,7 +447,7 @@ namespace Cones.Views
             }
 
         }
-
+        //get the filename based on flavour chosen for image to be displayed
         public string getImageName(string flavour)
         {
             if (flavour.Equals("Vanilla"))

@@ -10,6 +10,9 @@ using Newtonsoft.Json;
 
 namespace Cones.Views
 {
+    /// <summary>
+    /// Display quotes in this page
+    /// </summary>
     class QuoteView : ContentPage
     {
         public QuoteView()
@@ -21,14 +24,17 @@ namespace Cones.Views
 
         private async void QuoteGenView()
         {
-            //BackgroundColor = Color.FromRgb(253, 240, 197);
+
             BackgroundImage = "inspire.png";
+
+            //quote text
             var quotelabel = new Label();
             quotelabel.TextColor = Color.Black;
             quotelabel.FontSize = 30;
             quotelabel.FontAttributes = FontAttributes.Bold;
             quotelabel.HorizontalTextAlignment = TextAlignment.Center;
 
+            //author of quote
             var quoteAuthorLabel = new Label();
             quoteAuthorLabel.TextColor = Color.Black;
             quoteAuthorLabel.FontSize = 20;
@@ -44,7 +50,8 @@ namespace Cones.Views
 
             stackmain.Children.Add(quotelabel);
             stackmain.Children.Add(quoteAuthorLabel);
-
+            
+            //async call to get quote
             Quote q = await GetQuotesAsync();
             Content = stackmain;
             quotelabel.Text = "\""+q.quoteText+"\"";
@@ -53,6 +60,7 @@ namespace Cones.Views
 
         public async Task<Quote> GetQuotesAsync()
         {
+            //waiting to get the quote
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -68,6 +76,7 @@ namespace Cones.Views
                     }
                 }
             };
+            //async request to get quotes from forismatic api
             var requestUrl =
                 "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
 

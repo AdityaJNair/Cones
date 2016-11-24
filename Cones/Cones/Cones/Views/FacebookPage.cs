@@ -7,8 +7,12 @@ using Xamarin.Forms;
 
 namespace Cones.Views
 {
+    /// <summary>
+    /// Page that opens a webview on the Cones business facebook page
+    /// </summary>
     class FacebookPage : ContentPage
     {
+
         public FacebookPage()
         {
             NavigationPage.SetHasNavigationBar(this, false);

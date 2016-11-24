@@ -10,6 +10,9 @@ using Cones;
 
 namespace Cones.Views
 {
+    /// <summary>
+    /// Class that holds the orders
+    /// </summary>
     class OrdersView : ContentPage
     {
         private string userid;
@@ -19,28 +22,23 @@ namespace Cones.Views
             this.userid = userid;
 
             //main scroll view
-            //BackgroundColor = Color.FromRgb(253, 240, 197);
             BackgroundImage = "thin.png";
-            //var scrollview = new ScrollView();
-            //Content = scrollview;
 
             var mainstack = new StackLayout();
             Content = mainstack;
-            //scrollview.Content = mainstack;
+
             mainstack.Orientation = StackOrientation.Vertical;
             mainstack.Padding = 10;
             mainstack.Spacing = 10;
-            //mainstack.VerticalOptions = LayoutOptions.CenterAndExpand;
 
             //TABLES
             TableView tab = new TableView();
             tab.Intent = TableIntent.Form;
-            //tab.VerticalOptions = LayoutOptions.CenterAndExpand;
             tab.Root = new TableRoot();
 
             var tabsel = new TableSection("Ice Cream Flavours");
 
-
+            //Chocolate iceream cell
             var chocoCell = new ImageCell();
             chocoCell.ImageSource = "Chocolate.jpg";
             chocoCell.Text = "Chocolate $4";
@@ -48,6 +46,7 @@ namespace Cones.Views
             chocoCell.Detail = "Sweet milk chocolate";
             chocoCell.DetailColor = Color.Black;
 
+            //strawberry icecream cell
             var strawCell = new ImageCell();
             strawCell.ImageSource = "strawberry.jpg";
             strawCell.Text = "Strawberry $4";
@@ -55,6 +54,7 @@ namespace Cones.Views
             strawCell.Detail = "Authentic strawberries";
             strawCell.DetailColor = Color.Black;
 
+            //vanilla icecream cell
             var vanilCell = new ImageCell();
             vanilCell.ImageSource = "vanilla.jpg";
             vanilCell.Text = "Vanilla $4";
@@ -62,6 +62,7 @@ namespace Cones.Views
             vanilCell.Detail = "Creamy vanilla";
             vanilCell.DetailColor = Color.Black;
 
+            //french vanilla ice cream cell
             var frenchCell = new ImageCell();
             frenchCell.ImageSource = "French.png";
             frenchCell.Text = "French Vanilla $4.50";
@@ -69,6 +70,7 @@ namespace Cones.Views
             frenchCell.Detail = "Rich in flavour";
             frenchCell.DetailColor = Color.Black;
 
+            //cookies n cream cell
             var cookieCell = new ImageCell();
             cookieCell.ImageSource = "cookie.jpg";
             cookieCell.Text = "Cookies n Cream $5";
@@ -76,6 +78,7 @@ namespace Cones.Views
             cookieCell.Detail = "Actual oreo cookies";
             cookieCell.DetailColor = Color.Black;
 
+            //mango ice cream cell
             var mangoCell = new ImageCell();
             mangoCell.ImageSource = "mango.jpg";
             mangoCell.Text = "Mango $6";
@@ -83,6 +86,7 @@ namespace Cones.Views
             mangoCell.Detail = "Fresh used mangoes";
             mangoCell.DetailColor = Color.Black;
 
+            //mint chocolate ice cream cell
             var mintCell = new ImageCell();
             mintCell.ImageSource = "mint.jpg";
             mintCell.Text = "Mint Chocolate $6";
@@ -90,6 +94,7 @@ namespace Cones.Views
             mintCell.Detail = "Voted top 3 in world";
             mintCell.DetailColor = Color.Black;
 
+            //rasberry ice cream cell
             var rasberryCell = new ImageCell();
             rasberryCell.ImageSource = "rasberry.jpg";
             rasberryCell.Text = "Rasberry $5";
@@ -97,6 +102,7 @@ namespace Cones.Views
             rasberryCell.Detail = "For the sour lovers";
             rasberryCell.DetailColor = Color.Black;
 
+            //coffee ice cream cell
             var coffeeCell = new ImageCell();
             coffeeCell.ImageSource = "coffee.jpg";
             coffeeCell.Text = "Coffee $6";
@@ -104,6 +110,7 @@ namespace Cones.Views
             coffeeCell.Detail = "Smooth cappuccino-flavored";
             coffeeCell.DetailColor = Color.Black;
 
+            //add cells to the table
             tabsel.Add(chocoCell);
             tabsel.Add(strawCell);
             tabsel.Add(vanilCell);
@@ -115,9 +122,11 @@ namespace Cones.Views
             tabsel.Add(cookieCell);
             tab.Root.Add(tabsel);
 
+            //label for showing which item on table was selected
             var label = new Label();
             if (selflavour != null)
             {
+                //if order is modified
                 label.Text = "Flavour selected: "+selflavour;
             } else
             {
@@ -126,7 +135,7 @@ namespace Cones.Views
             label.FontSize = 20;
             label.FontAttributes = FontAttributes.Bold;
 
-
+            //depending on which cell tapped, display a message on the label
             vanilCell.Tapped += (s, e) => {
                 label.Text = "Flavour selected: Vanilla";
             };
@@ -162,6 +171,7 @@ namespace Cones.Views
             datePicker.Format = "D";
             datePicker.VerticalOptions = LayoutOptions.CenterAndExpand;
 
+            //if date set has already occured show error
             datePicker.DateSelected += (sender, e) =>
             {
                 if (e.NewDate < e.OldDate)
@@ -171,7 +181,7 @@ namespace Cones.Views
                 }
             };
 
-
+            //set a time that is in the future or current
             timePicker.PropertyChanged += (sender, e) =>
             {
                 if (e.PropertyName == TimePicker.TimeProperty.PropertyName)
@@ -198,20 +208,24 @@ namespace Cones.Views
             {
                 if (label.Text.Equals("Flavour selected: None"))
                 {
+                    //if flavour is not selected
                     await DisplayAlert("Alert", "Select a flavour", "OK");
                 }
                 else
                 {
+                    //Create a datetime object to be added in the IceCreamOrders object to be sent to the database
                     DateTime temp = new DateTime(datePicker.Date.Year, datePicker.Date.Month, datePicker.Date.Day, timePicker.Time.Hours, timePicker.Time.Minutes, timePicker.Time.Seconds, timePicker.Time.Milliseconds);
                     string flavour = label.Text.Substring(18, label.Text.Length - 18);
                     if(modifyorder == null)
                     {
+                        //if new order
                         IceCreamOrders order1 = new IceCreamOrders(userid, temp, flavour, getImageName(flavour));
                         await AzureManager.AzureManagerInstance.AddIceCreamOrder(order1);
                         await DisplayAlert("Completed", "Your order has been sent through.", "OK");
                         await Navigation.PopAsync();
                     } else
                     {
+                        //if modifying order
                         modifyorder.date = temp;
                         modifyorder.flavour = flavour;
                         modifyorder.filename = getImageName(flavour);
@@ -225,6 +239,7 @@ namespace Cones.Views
 
             };
 
+            //adding elemetns to the stacklayout
             mainstack.Children.Add(tab);
             mainstack.Children.Add(label);
             mainstack.Children.Add(timePicker);
@@ -232,6 +247,7 @@ namespace Cones.Views
             mainstack.Children.Add(addOrder);
         }
 
+        //converting flavours to filenames
         public string getImageName(string flavour)
         {
             if (flavour.Equals("Vanilla"))

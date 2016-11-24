@@ -10,6 +10,9 @@ using FacebookLogin.Services;
 
 namespace FacebookLogin.ViewModels
 {
+    /// <summary>
+    /// ViewModel provided by Plugin.Facebook that notifies when a profile information has been received.
+    /// </summary>
     public class FacebookViewModel : INotifyPropertyChanged
     {
         private FacebookProfile _facebookProfile;

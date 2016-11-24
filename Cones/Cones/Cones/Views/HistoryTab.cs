@@ -7,6 +7,9 @@ using Xamarin.Forms;
 
 namespace Cones.Views
 {
+    /// <summary>
+    /// Tabbed view that shows between the order history and timeline history of the flavors recommended by the application
+    /// </summary>
     class HistoryTab : TabbedPage
     {
         private string userid;

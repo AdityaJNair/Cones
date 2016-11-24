@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Cones.Models
 {
-
+    /// <summary>
+    /// The schema for icecream orders table inside Azure Easy tables
+    /// </summary>
     public class IceCreamOrders
     {
-
+        //main property ID for the database
         [JsonProperty(PropertyName = "Id")]
         public string ID { get; set; }
         [JsonProperty(PropertyName = "userId")]

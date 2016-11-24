@@ -10,6 +10,9 @@ using System.Collections.ObjectModel;
 
 namespace Cones.Views
 {
+    /// <summary>
+    /// The order history based on the orders for a particulat user
+    /// </summary>
     class OrderHistory : ContentPage
     {
         private string userid;
@@ -18,14 +21,13 @@ namespace Cones.Views
         {
             NavigationPage.SetHasNavigationBar(this, false);
             this.userid = userid;
-            //BackgroundColor = Color.FromRgb(253, 240, 197);
             createView();
 
         }
 
         public async void createView()
         {
-
+            //Title for the list view
             Label header = new Label
             {
                 Text = "Previous Orders",
@@ -44,9 +46,7 @@ namespace Cones.Views
             {
                 // Source of data items.
                 ItemsSource = obicecreamorders,
-                // Define template for displaying each item.
-                // (Argument of DataTemplate constructor is called for 
-                //      each item; it must return a Cell derivative.)
+
                 ItemTemplate = new DataTemplate(() =>
                 {
                     // Create views with bindings for displaying each property.
@@ -88,7 +88,6 @@ namespace Cones.Views
                 })
             };
 
-            // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
             // Build the page.
@@ -98,13 +97,14 @@ namespace Cones.Views
             stackl.Children.Add(header);
             stackl.Children.Add(listView);
 
+            //if an element in the list view is selected
             listView.ItemSelected += async (s, e) =>
             {
                 if (e.SelectedItem == null)
                 {
                     return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
                 }
-
+                //Get the elemnt Timeline object for the index that has been selected.
                 var index = (listView.ItemsSource as ObservableCollection<IceCreamOrders>).IndexOf(e.SelectedItem as IceCreamOrders);
                 IceCreamOrders tmp = obicecreamorders.ElementAt(index);
                 if(tmp.date < DateTime.Now)
@@ -112,14 +112,17 @@ namespace Cones.Views
                     return;
                 } else
                 {
+                    //options for the user to update or delete an order that has not been completed
                     var result = await DisplayActionSheet("Modify this order?", "Cancel", null, "Update", "Delete"); // since we are using async, we should specify the DisplayAlert as awaiting.
                     if (result.Equals("Update")) // if it's equal to Ok
                     {
+                        //if update make a new order and update the database
                         await Navigation.PushAsync(new OrdersView(this.userid, tmp,tmp.flavour));
                         this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
                     }
                     else if (result.Equals("Delete")) // if it's equal to Cancel
                     {
+                        //if delete remove the item from the database
                         await AzureManager.AzureManagerInstance.DeleteIceCreamOrders(tmp);
                         obicecreamorders.Remove(tmp);
                     }

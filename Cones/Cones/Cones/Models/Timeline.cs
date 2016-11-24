@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Cones.Models
 {
+    /// <summary>
+    /// Timeline sceham for table for cognitive services emotions data and ice cream recommendation for a particular user
+    /// </summary>
     public class Timeline
     {
         [JsonProperty(PropertyName = "Id")]

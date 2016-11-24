@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Cones.Models
 {
+    /// <summary>
+    /// User schema for new users that use the application
+    /// </summary>
     public class Users
     {
         [JsonProperty(PropertyName = "Id")]

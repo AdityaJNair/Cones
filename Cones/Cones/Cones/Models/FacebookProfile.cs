@@ -2,6 +2,10 @@
 
 namespace FacebookLogin.Models
 {
+    /// <summary>
+    /// FacebookProfile class - Made from Plugin.Facebook where login through facebook manually was done.
+    /// Class has the schema for the profile of a user and gets this with the graph api
+    /// </summary>
     public class FacebookProfile
     {
         public string Name { get; set; }
